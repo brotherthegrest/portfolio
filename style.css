@@ -1,0 +1,37 @@
+body div.absolute {
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 15px,
+        #0000ff1a 15px,
+        #0000ff1a 20px
+      );
+    background-size: 28px 28px;
+    height: 1vh;
+  }
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 1;
+    }
+    55% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  #your-element {
+    animation: fadeInOut 3s infinite;
+  }
+  .hiddenn{
+    opacity: 0;
+    transition: all 1s;
+  }
+   
+  .show {
+    opacity: 1;
+  }

@@ -7,15 +7,47 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/htmx.org@1.9.6"></script>
     <!-- from node_modules -->
+    <script src="https://cdn.jsdelivr.net/npm/taos@1.0.0/dist/taos.min.js"></script>
     <script src="node_modules/@material-tailwind/html/scripts/collapse.js"></script>
-    <script src="style.css"></script>
     <!-- from cdn -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/collapse.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script defer src="app.js"></script>
+    <script>Taos.init();</script>
+    <style>
+        .flip-animation {
+    transform-origin: center;
+  }
+  .flip-animation.taos-in {
+    animation: flip-in 1s;
+  }
+  .flip-animation.taos-out {
+    animation: flip-out 1s;
+  }
+  @keyframes flip-in {
+    from {
+      transform: rotateX(-90deg);
+    }
+    to {
+      transform: rotateX(0deg);
+    }
+  }
+  @keyframes flip-out {
+    from {
+      transform: rotateX(0deg);
+    }
+    to {
+      transform: rotateX(-90deg);
+    }
+  }
+    </style>
+ 
     <title>Portfolio</title>
 </head>
-<body class="bg-black">
-    <nav class="bg-violet-600 border-violet-700 p-1 ml-16 mr-16 rounded-full">
+<body class="bg-black relative">
+    <nav class="fixed-top bg-gradient-to-r from-purple-500 via-red-500 to-purple-950  p-1 ml-16 mr-16 rounded-full">
       <div class="bg-zinc-300 w-16 rounded-full">
         <button class="object-center text-center cursor-pointer w-full">
           <h4>Home</h4>
@@ -23,51 +55,54 @@
       </div>
     </nav>
     <div class="h-screen">
+
+
         <div class="flex flex-col justify-between">
-          <div class="flex flex-row  justify-between">
-          <div class="flex flex-col self-center">
-      <div class="p-4 mt-4">
+          <div class="self-center">
+      <div class="p-4 mt-4 flex flex-col">
         <p class=" text-white text-6xl"> 
           Hey 👋 
         </p>
         <p class=" text-white text-8xl"> I'm Alan </p>
-        <br>
-        <br>
+        <img src="assets/hacker_6071080.png" alt="" class="image-class h-80 w-80">
+       <br>
         <p class=" text-white text-l"> I'm a Dev </p>
-      </div>
       </div>
       </div>
 
       </div>
-      </div>
-      
-      <div class="p-4 mt-4">
-        <p class=" text-white text-2xl"> 
+    </div>
+     <div class="delay-[300ms] duration-[600ms] taos:scale-[1.2] taos:opacity-0" data-taos-offset="400"> 
+     <div class="flex-col ml-8 ">
+        <p class="text-white text-2xl"> 
           “Do not pray for easy lives. Pray to be stronger men." 
         </p>
-        <p class=" text-white text-4xl"> -J.F.Kenndey COD zombies </p>
+        <p class="text-white text-4xl"> -J.F.Kenndey in COD zombies </p>
       </div>
-      <div class="p-4  mt-8"  >
+    </div>
+    
+    <div class="p-4   flex-row mt-20 show delay-[300ms] duration-[600ms] taos:scale-[1.2] taos:opacity-0" data-taos-offset="400">
+      <div class="flex flex-col">
         <p class="text-white text-2xl"> 
           “We are all being tested in life, this is one test you cant cheat on" 
         </p>
         <p class="text-white text-4xl"> -David Goggins </p>
-      </div> 
-      <div class="p-4 mt-8">
+      </div>
+    </div> 
+    
+    <div class="p-4 flex-row mt-20 show delay-[300ms] duration-[600ms] taos:scale-[1.2] taos:opacity-0" data-taos-offset="400"> 
+      <div class="flex flex-col">
         <p class="text-white text-2xl"> 
             “Wait for a miracle and it will never come,<br>take responsibility and you’ll invite a miracle.”
         </p>
         <p class="text-white text-4xl"> -Laura Berman </p>
       </div>
-    <div class="bg-purple-950 w-full h-full">
-        
-       <h1 class="text-3xl text-center text-white">About Me</h1>
-        <p class="text-white">
-            Im a young programmer from Ireland<br>I started off my programming journey with arduino, gaining a quick love for programming <br> lalala ill do this later 
-        </p>
 
-        
     </div>
+    
+   <section class="h-screen w-screen bg-purple-950 mt-40">
+    
+   </section> 
   </body>
 </html>
 
